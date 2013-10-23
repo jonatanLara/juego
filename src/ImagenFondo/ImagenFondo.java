@@ -1,4 +1,3 @@
-
 package ImagenFondo;
 
 import java.awt.Dimension;
@@ -11,22 +10,23 @@ import javax.swing.ImageIcon;
  */
 public class ImagenFondo extends javax.swing.JPanel {
 
-    public ImagenFondo(){
-     initComponents();
-    this.setSize(643, 508);
+    public ImagenFondo() {
+        initComponents();
+        this.setSize(647, 509);
+       
     }
+
     @Override
-    public void paintComponent(Graphics g){
-  Dimension tam = getSize();
-  ImageIcon ImagenFondo= new ImageIcon(new ImageIcon(getClass().getResource("fondo.jpg")).getImage());
-  g.drawImage(ImagenFondo.getImage(), 0, 0, tam.width, tam.height, null);
-  setOpaque(false);
-  super.paintComponent(g);
-}
+    public void paintComponent(Graphics g) {
+        Dimension tam = getSize();
+        ImageIcon ImagenFondo = new ImageIcon(new ImageIcon(getClass().getResource("preview.jpg")).getImage());
+         g.drawImage(ImagenFondo.getImage(), 0, 0, tam.width, tam.height, null);
+        setOpaque(false);
+        super.paintComponent(g);
+        
+    }
 
     private void initComponents() {
         //
     }
-    
-    
 }
