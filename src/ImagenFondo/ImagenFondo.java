@@ -12,7 +12,7 @@ public class ImagenFondo extends javax.swing.JPanel {
 
     public ImagenFondo() {
         initComponents();
-        this.setSize(647, 509);
+        this.setSize(772, 564);
        
     }
 
