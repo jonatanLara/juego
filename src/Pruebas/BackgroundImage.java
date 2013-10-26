@@ -12,15 +12,15 @@ import javax.swing.JPanel;
  *
  * @author usuario
  */
-public class JPaneImage extends JPanel {
+public class BackgroundImage extends JPanel {
 
     private Image imagen;
 
-    public JPaneImage() {
+    public BackgroundImage() {
         imagen = null;
     }
 
-    public JPaneImage(String nombreimagen) {
+    public BackgroundImage(String nombreimagen) {
         //si nombre imagen es diferente de null asignara la imagen
         if (nombreimagen != null) {
             imagen = new ImageIcon(getClass().getResource(nombreimagen)).getImage();
@@ -28,7 +28,7 @@ public class JPaneImage extends JPanel {
         }
     }
 
-    public JPaneImage(Image img) {
+    public BackgroundImage(Image img) {
         //si image es diferente asignaremos la variable imagen un image
         if (img != null) {
             imagen = img;

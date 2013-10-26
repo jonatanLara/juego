@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  */
 public class JFrameImage extends JFrame {
 
-    private final JPaneImage modelo = new JPaneImage();
+    private final BackgroundImage modelo = new BackgroundImage();
 
     public JFrameImage() 
     {

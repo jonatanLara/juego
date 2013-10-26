@@ -6,11 +6,16 @@
  * Created on 28-sep-2013, 18:43:14
  */
 
-package Games.memorama;
+package Games.Memoria;
 
+import Games.Memoria.GameMemory;
 import botones.*;
 import java.applet.AudioClip;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class memoria extends javax.swing.JFrame {
 
@@ -41,7 +46,7 @@ public class memoria extends javax.swing.JFrame {
         );
         principalLayout.setVerticalGroup(
             principalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 401, Short.MAX_VALUE)
+            .add(0, 412, Short.MAX_VALUE)
         );
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu2.png"))); // NOI18N
@@ -122,10 +127,9 @@ public class memoria extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .add(principal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(principal, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -141,21 +145,14 @@ public class memoria extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //ponemos el memorama en el Jpanel principal
-        //Memorama facil = new Memorama(5, new Dimension(principal.getWidth(), principal.getHeight()));
-        Memorama facil = new Memorama();
-        facil.setPreferredSize(new Dimension(400, 300));
-        principal.add(facil);
-        add(principal);
-         
-        principal.setVisible(true);
-      
-         principal.updateUI();
-         principal.revalidate();
-      //principal.repaint();
-       facil.repaint();
-        
-        
+        int witdh = principal.getWidth();
+        int height = principal.getHeight();
+        principal.setLayout(new BorderLayout());
+        GameMemory game = new GameMemory();
+        game.setPreferredSize(new Dimension(witdh, height));
+        principal.add("Center", game);
+        principal.updateUI();
+        principal.validate();
         //    AUDIO    
         AudioClip sonido;
         sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));

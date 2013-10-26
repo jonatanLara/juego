@@ -7,7 +7,7 @@
 
 package botones;
 
-import Games.memorama.memoria;
+import Games.Memoria.memoria;
 import ImagenFondo.ImagenFondo;
 import Pruebas.JFrameImage;
 import java.applet.AudioClip;
