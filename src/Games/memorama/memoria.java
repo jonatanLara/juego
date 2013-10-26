@@ -25,13 +25,24 @@ public class memoria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        principal = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        principal = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        org.jdesktop.layout.GroupLayout principalLayout = new org.jdesktop.layout.GroupLayout(principal);
+        principal.setLayout(principalLayout);
+        principalLayout.setHorizontalGroup(
+            principalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 753, Short.MAX_VALUE)
+        );
+        principalLayout.setVerticalGroup(
+            principalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 401, Short.MAX_VALUE)
+        );
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu2.png"))); // NOI18N
         jButton1.setBorderPainted(false);
@@ -101,17 +112,6 @@ public class memoria extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        org.jdesktop.layout.GroupLayout principalLayout = new org.jdesktop.layout.GroupLayout(principal);
-        principal.setLayout(principalLayout);
-        principalLayout.setHorizontalGroup(
-            principalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 753, Short.MAX_VALUE)
-        );
-        principalLayout.setVerticalGroup(
-            principalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 401, Short.MAX_VALUE)
-        );
-
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -146,14 +146,17 @@ public class memoria extends javax.swing.JFrame {
         Memorama facil = new Memorama();
         facil.setPreferredSize(new Dimension(400, 300));
         principal.add(facil);
-        //principal.setVisible(true);
+        add(principal);
+         
+        principal.setVisible(true);
+      
+         principal.updateUI();
+         principal.revalidate();
+      //principal.repaint();
+       facil.repaint();
         
-        principal.updateUI();
-        principal.validate();
-        //principal.repaint();
-     
-        facil.repaint();
-        //
+        
+        //    AUDIO    
         AudioClip sonido;
         sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
         sonido.play();
