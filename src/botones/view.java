@@ -5,6 +5,7 @@ import java.applet.AudioClip;
 public class view extends javax.swing.JDialog {
 public view(){
 initComponents();
+  
     setLocationRelativeTo(null);//centra la pantalla
   //  setResizable(false);// desabilita que se maximise
 }

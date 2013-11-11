@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  */
 public class JFrameImage extends JFrame {
 
-    private final BackgroundImage modelo = new BackgroundImage();
+    private final BackgroundImage modelo = new BackgroundImage("/Recursos/fondo.png");
 
     public JFrameImage() 
     {

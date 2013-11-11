@@ -9,7 +9,7 @@ package botones;
 
 import Games.Memoria.memoria;
 import ImagenFondo.ImagenFondo;
-import Pruebas.JFrameImage;
+
 import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.Cursor;
@@ -19,12 +19,17 @@ public class vista extends javax.swing.JFrame {
     // agrego una Imagen de fondo a la pantalla Principal
     //llamo al obj
     ImagenFondo f =new ImagenFondo();
-
+static AudioClip game;
     
-   
-   /** Creates new form vista */
+    
+    /** Creates new form vista */
     public vista() {
+        
+        
+        game=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/game.wav"));
+        game.play();
         initComponents();
+        
         //Imagen de Fondo.
         this.add(f,BorderLayout.CENTER);
         this.pack();
@@ -34,6 +39,8 @@ public class vista extends javax.swing.JFrame {
         jButton4.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         setLocationRelativeTo(null);
+         
+        
 
     }
 
@@ -136,22 +143,21 @@ public class vista extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 125, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 112, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .add(jButton4)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(427, Short.MAX_VALUE)
+                .addContainerGap(463, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                         .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 130, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(jButton5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 131, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(layout.createSequentialGroup()
-                        .add(jButton4)
-                        .add(11, 11, 11)))
+                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(jButton4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(org.jdesktop.layout.GroupLayout.TRAILING, jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -163,6 +169,9 @@ public class vista extends javax.swing.JFrame {
         AudioClip sonido;
         sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
         sonido.play();
+        view objeto = new view ();// declaro el objeto
+        objeto.setVisible(true);
+        dispose(); 
       //setImage("preview.jpg");
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -172,6 +181,7 @@ public class vista extends javax.swing.JFrame {
         AudioClip sonido;
         sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
         sonido.play();
+        game.stop();
        //conctamos a la vista juego
         memoria obj = new memoria();// declaro el objeto
         obj.setVisible(true);
@@ -179,13 +189,8 @@ public class vista extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        AudioClip sonido;
-        sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
-        sonido.play();
-        view objeto = new view ();// declaro el objeto
-        objeto.setVisible(true);
-        dispose();  //  */
+        game.stop();
+         //  */
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -199,6 +204,7 @@ public class vista extends javax.swing.JFrame {
         AudioClip sonido;
         sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/gemongem2.wav"));
         sonido.play();
+        
         vista2 obj = new vista2();// declaro el objeto
         obj.setVisible(true);
         dispose();// para que se cierre mi Vista Principal 

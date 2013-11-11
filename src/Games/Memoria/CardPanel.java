@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Games.Memoria;
 
 import java.awt.Graphics;
@@ -28,9 +25,11 @@ public class CardPanel extends CustomCanvas{
     public void paint(Graphics g){
         super.paint(g);
         if (!block) {
+           // las images de los animales
             g.drawImage(image, toFisicX(-5), toFisicY(5), right-left, bottom-top, this);
         }else{
             Image question = new ImageIcon(getClass().getResource("/imagenes/question.png")).getImage();
+       // carga los iconos en question 
             g.drawImage(question, toFisicX(-5), toFisicY(5), right-left, bottom-top, this);
         }
     }

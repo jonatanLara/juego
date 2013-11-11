@@ -1,4 +1,3 @@
-
 package Games.Memoria;
 
 import java.awt.Graphics;
@@ -6,9 +5,9 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Atxy2k
+/**  EN ESTA CLASE SE CAPTURA LAS IMAGENES 
+ *   DEL PANEL O PLANILLA Y LA IMAGE 
+ *   GANADORA O PERDEDORA
  */
 public class Background extends JPanel{
     
@@ -16,13 +15,18 @@ public class Background extends JPanel{
     Image after;
     
     public Background(BufferedImage image, Image after) {
+        //planilla del juego
         this.image = image;
+        //imagen ganador o perdedor
         this.after = after;
     }
-    
+    @Override
     public void paint(Graphics g){
+        //imagen del juego la planilla
         g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-        g.drawImage(after, 0, 0, getWidth()/2, getHeight(), this);
+        //imagen que sale despues del juego 
+        g.drawImage(after, 150, 0, getWidth()/2 ,getHeight(), this);
+        
     }
     
     
