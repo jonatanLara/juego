@@ -14,6 +14,7 @@ package botones;
 import ImagenFondo.ImagenFondo;
 import java.applet.AudioClip;
 import java.awt.BorderLayout;
+import javax.swing.JLabel;
 
 
 /**
@@ -23,13 +24,15 @@ import java.awt.BorderLayout;
 public class vista2 extends javax.swing.JFrame {
     //imagen de fondo  
     ImagenFondo f2 =new ImagenFondo();
+    JLabel label;
     /** Creates new form vista2 */
     public vista2() {
-         setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
         initComponents();
-         this.add(f2,BorderLayout.CENTER);
+        this.add(f2,BorderLayout.CENTER);
         this.pack();
-
+        
+       // vista2.add(this);
 
  
     }
@@ -44,32 +47,42 @@ public class vista2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(772, 564));
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Atras");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel1.setText("<<<     TITULOS     >>>");
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .add(0, 236, Short.MAX_VALUE)
+                .addContainerGap(422, Short.MAX_VALUE)
                 .add(jButton1)
-                .add(131, 131, 131))
+                .addContainerGap())
+            .add(layout.createSequentialGroup()
+                .add(14, 14, 14)
+                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 470, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(322, Short.MAX_VALUE)
-                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 327, Short.MAX_VALUE)
+                .add(jButton1)
                 .addContainerGap())
         );
 
@@ -78,7 +91,7 @@ public class vista2 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-         AudioClip sonido;
+        AudioClip sonido;
         sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
         sonido.play();
         vista  obj = new vista();// declaro el objeto
@@ -99,6 +112,7 @@ public class vista2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 
 }

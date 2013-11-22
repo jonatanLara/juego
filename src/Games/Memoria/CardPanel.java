@@ -24,6 +24,7 @@ public class CardPanel extends CustomCanvas{
     @Override
     public void paint(Graphics g){
         super.paint(g);
+        // si mi carta esta diferente de block
         if (!block) {
            // las images de los animales
             g.drawImage(image, toFisicX(-5), toFisicY(5), right-left, bottom-top, this);

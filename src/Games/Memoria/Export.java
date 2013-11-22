@@ -1,5 +1,5 @@
 /*
- * captita la imagen de todo el panel  
+ * captura la imagen de todo el panel  
  * 
  */
 package Games.Memoria;

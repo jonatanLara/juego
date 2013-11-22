@@ -15,13 +15,16 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JPanel;
+
+import javax.swing.JLabel;
+//import javax.swing.JPanel;
 
 /**
  *
  * @author Atxy2k
  */
-public class GameMemory extends JPanel {
+//public class GameMemory extends JPanel {
+public class GameMemory extends JLabel {
 
     private ArrayList<CardPanel> all = new ArrayList<CardPanel>();
     private ArrayList<CardPanel> selected = new ArrayList<CardPanel>();
@@ -31,6 +34,7 @@ public class GameMemory extends JPanel {
 
     public GameMemory() {
         super();
+        //5x4 
         this.setLayout(new GridLayout(5, 4, 1, 1));
         addCards();
     }
@@ -47,10 +51,11 @@ public class GameMemory extends JPanel {
                     if (card.isBlock()) {
                         card.active();
                         selected.add(card);
-                        //   AUDIOO POR CARRTAA 
+                        //  AUDIOO POR CARRTAA 
                         AudioClip combo32;
                         combo32 = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/combo32.wav"));
                         combo32.play();
+                        
                         card.repaint();
                         check();
                     }
@@ -128,9 +133,11 @@ public class GameMemory extends JPanel {
             this.removeAll();
             this.setLayout(new BorderLayout());
             Background canvas;
+          //  Animacion canvas2;
             if (result) {      
                 //    ganaste
-            canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/Caritas_animadas_.gif")).getImage());
+              
+                canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/Caritas_animadas_.gif")).getImage());
                 AudioClip win;
                 win = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Applause.wav"));
                 win.play();

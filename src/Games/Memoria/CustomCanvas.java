@@ -49,7 +49,7 @@ public class CustomCanvas extends Canvas{
     public void paint(Graphics g){
         g.setColor(Color.white);
         g.fillRect(0, 0, getWidth(), getHeight());
-        g.setColor(Color.black);
+      //  g.setColor(Color.black);
         initComponents();
     }
     

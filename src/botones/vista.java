@@ -17,34 +17,35 @@ import java.awt.Cursor;
 
 public class vista extends javax.swing.JFrame {
     // agrego una Imagen de fondo a la pantalla Principal
-    //llamo al obj
-    ImagenFondo f =new ImagenFondo();
-static AudioClip game;
+    //llamo al obj 
+  // ImagenFondo f =new ImagenFondo();
+    
+ private final ImagenFondo modelo = new ImagenFondo("preview.png");
+   static AudioClip game;
     
     
     /** Creates new form vista */
     public vista() {
-        
+        setContentPane(modelo);
         
         game=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/game.wav"));
         game.play();
         initComponents();
         
         //Imagen de Fondo.
-        this.add(f,BorderLayout.CENTER);
-        this.pack();
+   //     this.add(f,BorderLayout.CENTER);
+     //   this.pack();
         //cursor
         jButton3.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton4.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         setLocationRelativeTo(null);
-         
-        
+         }
 
+    public void setImage(String nombreimagen) {
+        modelo.setImage(nombreimagen);
     }
-
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

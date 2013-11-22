@@ -1,12 +1,21 @@
 
 package botones;
 
+import LogoInicial.LogoInicial;
+
 
 
 public class botones {
 //
+static LogoInicial carga;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        carga = new LogoInicial();
+        carga.CargarImagen();
+        Thread.currentThread();
+        Thread.sleep(6000);
+        carga.setVisible(false);
+        
         vista reproducir = new vista();
         reproducir.setVisible(true);
         
