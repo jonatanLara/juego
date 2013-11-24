@@ -23,14 +23,14 @@ import javax.swing.JLabel;
  */
 public class vista2 extends javax.swing.JFrame {
     //imagen de fondo  
-    ImagenFondo f2 =new ImagenFondo();
+   private final ImagenFondo modelo = new ImagenFondo("/ImagenFondo/preview.png");
+   static AudioClip game;
     JLabel label;
     /** Creates new form vista2 */
     public vista2() {
         setLocationRelativeTo(null);
         initComponents();
-        this.add(f2,BorderLayout.CENTER);
-        this.pack();
+        setContentPane(modelo);
         
        // vista2.add(this);
 

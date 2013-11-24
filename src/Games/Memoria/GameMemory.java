@@ -126,21 +126,28 @@ public class GameMemory extends JLabel {
             }
         }
     }
+     
 
     public void showAlert(boolean result) {
+        
         BufferedImage image = getJPanelImage();
         if (image != null) {
             this.removeAll();
             this.setLayout(new BorderLayout());
             Background canvas;
-          //  Animacion canvas2;
+            
+          
             if (result) {      
                 //    ganaste
               
                 canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/Caritas_animadas_.gif")).getImage());
+                
+                
                 AudioClip win;
                 win = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Applause.wav"));
                 win.play();
+                
+                
             } else {  
                 // perdiste
                 canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/Caritas_animadas_.gif")).getImage());

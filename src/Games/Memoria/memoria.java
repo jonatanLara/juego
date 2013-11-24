@@ -17,19 +17,19 @@ import java.awt.Dimension;
 
 public class memoria extends javax.swing.JFrame {
     //imagen de fondo
-ImagenFondo f3 =new ImagenFondo();
+  private final ImagenFondo modelo = new ImagenFondo("/ImagenFondo/preview.png");
+   static AudioClip game;
     /** Creates new form Memorama */
 static AudioClip fondo;
     public memoria() {
-      
+      setContentPane(modelo);
         fondo=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/ambient_red_savannah.wav"));
         fondo.play();
         initComponents();
         // centrar la pantalla
         setLocationRelativeTo(null);
         //imagen de fondo 
-        this.add(f3,BorderLayout.CENTER);
-        this.pack();
+        
     }
 
     

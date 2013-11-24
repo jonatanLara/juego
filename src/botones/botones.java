@@ -2,6 +2,7 @@
 package botones;
 
 import LogoInicial.LogoInicial;
+import javax.swing.ImageIcon;
 
 
 
@@ -11,29 +12,14 @@ static LogoInicial carga;
 
     public static void main(String[] args) throws InterruptedException {
         carga = new LogoInicial();
-        carga.CargarImagen();
+        ImageIcon icon = carga.getImage();
+        int width = icon.getImage().getWidth(carga);
+        int height = icon.getImage().getHeight(carga);
+        carga.setSize(width, height);
         Thread.currentThread();
         Thread.sleep(6000);
-        carga.setVisible(false);
-        
+        carga.setVisible(false);        
         vista reproducir = new vista();
         reproducir.setVisible(true);
-        
-      
-        
-     //in 
-   /*  do
-      nombre = JOptionPane.showInputDialog("Escribe tu nombre", nombre);
-     while ((nombre == null) || (nombre.equals("")));
-
-      setTitle("Bienvenido: " + nombre);
     }
-
-    private static void setTitle(String string) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    */
-    }
-         
-        
 }
