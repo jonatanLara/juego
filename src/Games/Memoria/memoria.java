@@ -18,17 +18,21 @@ import java.awt.Dimension;
 public class memoria extends javax.swing.JFrame {
     //imagen de fondo
   private final ImagenFondo modelo = new ImagenFondo("/ImagenFondo/preview.png");
-   static AudioClip game;
+
     /** Creates new form Memorama */
-static AudioClip fondo;
+    private AudioClip fondo;
     public memoria() {
-      setContentPane(modelo);
+        setUndecorated(true);
+        setContentPane(modelo);
         fondo=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/ambient_red_savannah.wav"));
         fondo.play();
+         
         initComponents();
         // centrar la pantalla
         setLocationRelativeTo(null);
-        //imagen de fondo 
+        //imagen de fondo
+        
+       
         
     }
 
@@ -99,7 +103,7 @@ static AudioClip fondo;
                         .add(jButton2)
                         .add(30, 30, 30)
                         .add(jButton3)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 289, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 316, Short.MAX_VALUE)
                         .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(17, 17, 17))
         );
@@ -107,7 +111,7 @@ static AudioClip fondo;
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .add(9, 9, 9)
-                .add(principal, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                .add(principal, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
                 .add(18, 18, 18)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
@@ -124,6 +128,7 @@ static AudioClip fondo;
         AudioClip boton;
         boton=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
         boton.play();
+        fondo.stop();
         vista obj = new vista ();// declaro el objeto
         obj.setVisible(true);
         dispose();       

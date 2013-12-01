@@ -1,11 +1,17 @@
 package botones;
 
+import ImagenFondo.ImagenFondo;
 import java.applet.AudioClip;
+import javax.swing.JFrame;
 
-public class view extends javax.swing.JDialog {
+public class view extends JFrame {
+    private final ImagenFondo modelo = new ImagenFondo("preview.png");
+    //ImagenFondo im = new ImagenFondo();
+    private AudioClip sonido;
 public view(){
-initComponents();
-  
+    setContentPane(modelo);
+    initComponents();
+   // modelo.add(this);
     setLocationRelativeTo(null);//centra la pantalla
   //  setResizable(false);// desabilita que se maximise
 }
@@ -45,21 +51,21 @@ initComponents();
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(26, 26, 26)
-                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 101, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(281, Short.MAX_VALUE))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(289, Short.MAX_VALUE)
+                .addContainerGap(678, Short.MAX_VALUE)
                 .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .add(layout.createSequentialGroup()
+                .add(157, 157, 157)
+                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 101, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .add(146, 146, 146)
                 .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 106, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(63, 63, 63)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 254, Short.MAX_VALUE)
                 .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 88, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -70,7 +76,7 @@ initComponents();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
 
-        AudioClip sonido;
+        
         sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/sound.wav"));
         sonido.play();
         // TODO add your handling code here:
@@ -78,9 +84,10 @@ initComponents();
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:AudioClip sonido;
-        AudioClip sonido;
-        sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
-        sonido.play();
+        AudioClip son;
+        son=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
+        son.play();
+        sonido.stop();
         vista  obj = new vista();// declaro el objeto
         obj.setVisible(true);
         dispose();

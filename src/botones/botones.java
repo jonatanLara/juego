@@ -16,10 +16,15 @@ static LogoInicial carga;
         int width = icon.getImage().getWidth(carga);
         int height = icon.getImage().getHeight(carga);
         carga.setSize(width, height);
+        
         Thread.currentThread();
         Thread.sleep(6000);
-        carga.setVisible(false);        
+        carga.setVisible(false);
+        
+     
         vista reproducir = new vista();
         reproducir.setVisible(true);
+       
+        
+        }
     }
-}

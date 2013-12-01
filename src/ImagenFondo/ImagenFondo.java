@@ -15,7 +15,7 @@ private Image imagen;
     public ImagenFondo() {
         imagen =null;
        
-    //  this.setSize(795, 600);
+      // this.setSize(795, 600);
       } 
      public ImagenFondo(String nombre){
           if(nombre != null)

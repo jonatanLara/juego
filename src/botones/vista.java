@@ -9,27 +9,31 @@ package botones;
 
 import Games.Memoria.memoria;
 import ImagenFondo.ImagenFondo;
+import Salir.Salir;
 
 import java.applet.AudioClip;
-import java.awt.BorderLayout;
 import java.awt.Cursor;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JFrame;
 
 
-public class vista extends javax.swing.JFrame {
+public class vista extends JFrame {
     // agrego una Imagen de fondo a la pantalla Principal
-    //llamo al obj 
-  // ImagenFondo f =new ImagenFondo();
-    
+   
  private final ImagenFondo modelo = new ImagenFondo("preview.png");
    static AudioClip game;
     
     
     /** Creates new form vista */
     public vista() {
+     
+        setUndecorated(true); //quitar la barra de titulo
         setContentPane(modelo);
         
         game=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/game.wav"));
         game.play();
+        
         initComponents();
         
         //Imagen de Fondo.
@@ -40,7 +44,10 @@ public class vista extends javax.swing.JFrame {
         jButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton4.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jButton5.setCursor(new Cursor(Cursor.HAND_CURSOR));
         setLocationRelativeTo(null);
+                
+
          }
 
     public void setImage(String nombreimagen) {
@@ -87,13 +94,14 @@ public class vista extends javax.swing.JFrame {
             }
         });
 
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/estrella.gif"))); // NOI18N
+        jButton4.setToolTipText("hola");
+        jButton4.setBorder(null);
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setIconTextGap(0);
-        jButton4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/image/estrella.gif"))); // NOI18N
-        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/image/estrella.gif"))); // NOI18N
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,24 +149,25 @@ public class vista extends javax.swing.JFrame {
                 .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 123, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(42, 42, 42)
                 .add(jButton5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 138, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(18, 18, 18)
                 .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 125, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 29, Short.MAX_VALUE)
                 .add(jButton4)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .add(23, 23, 23))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(463, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                         .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 130, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(jButton5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 131, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(layout.createSequentialGroup()
                         .add(jButton4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(org.jdesktop.layout.GroupLayout.TRAILING, jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 120, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(11, 11, 11)))
                 .addContainerGap())
         );
 
@@ -172,7 +181,8 @@ public class vista extends javax.swing.JFrame {
         sonido.play();
         view objeto = new view ();// declaro el objeto
         objeto.setVisible(true);
-        dispose(); 
+        dispose();
+        game.stop();
       //setImage("preview.jpg");
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -191,6 +201,7 @@ public class vista extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         game.stop();
+        
          //  */
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -198,14 +209,29 @@ public class vista extends javax.swing.JFrame {
         AudioClip sonido;
         sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/gemongem2.wav"));
         sonido.play();
-        // para que se cierre mi Vista Principal     */   // TODO add your handling code here:
+        game.stop();
+        Salir salir =new  Salir();
+        salir.setVisible(true);
+        
+       //Evento de que cuando presionen el boton de Salir se acabe el programa
+      /* jButton4.addMouseListener(new  MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                System.exit(vista.EXIT_ON_CLOSE);
+            }
+        });
+        //   vista.EXIT_ON_CLOSE(3);
+       
+        
+        // para que se cierre mi Vista Principal     */  
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         AudioClip sonido;
         sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/gemongem2.wav"));
         sonido.play();
-        
+        game.stop();
         vista2 obj = new vista2();// declaro el objeto
         obj.setVisible(true);
         dispose();// para que se cierre mi Vista Principal 
@@ -218,8 +244,11 @@ public class vista extends javax.swing.JFrame {
     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new vista().setVisible(true);
+            
+                        
             }
         });
     }
@@ -228,7 +257,7 @@ public class vista extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    public javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     // End of variables declaration//GEN-END:variables
 

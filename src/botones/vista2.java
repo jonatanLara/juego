@@ -11,30 +11,40 @@
 
 package botones;
 
+import Creditos.Creditos;
+import Games.Memoria.GameMemory;
 import ImagenFondo.ImagenFondo;
 import java.applet.AudioClip;
 import java.awt.BorderLayout;
-import javax.swing.JLabel;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import javax.swing.JFrame;
+
 
 
 /**
  *
  * @author sarahmanchon
  */
-public class vista2 extends javax.swing.JFrame {
+public class vista2 extends JFrame {
     //imagen de fondo  
-   private final ImagenFondo modelo = new ImagenFondo("/ImagenFondo/preview.png");
-   static AudioClip game;
-    JLabel label;
+   private final ImagenFondo modelo1 = new ImagenFondo("/ImagenFondo/preview2.png");
+   private AudioClip game;
+   
     /** Creates new form vista2 */
     public vista2() {
-        setLocationRelativeTo(null);
-        initComponents();
-        setContentPane(modelo);
+       
+        setUndecorated(true);
+        setContentPane(modelo1);
+       
         
        // vista2.add(this);
-
- 
+initComponents();
+  jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+  jButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+  
+    //move(450, 300);
+   setLocationRelativeTo(null);
     }
 
     /** This method is called from within the constructor to
@@ -48,41 +58,98 @@ public class vista2 extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        credito = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jButton1.setText("Atras");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setDefaultCapable(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 51, 153));
+        jLabel1.setFont(new java.awt.Font("Herculanum", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 51, 0));
         jLabel1.setText("<<<     TITULOS     >>>");
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoInicial/logo1.png"))); // NOI18N
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setDefaultCapable(false);
+        jButton2.setFocusPainted(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoInicial/Imagen-animada-de-Cocodrilo-29.gif"))); // NOI18N
+
+        jButton3.setFont(new java.awt.Font("Herculanum", 0, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(102, 51, 0));
+        jButton3.setText("instrucciones");
+        jButton3.setActionCommand(" instrucciones");
+        jButton3.setAlignmentX(-1.0F);
+        jButton3.setAlignmentY(0.0F);
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setDefaultCapable(false);
+        jButton3.setFocusPainted(false);
+        jButton3.setFocusTraversalKeysEnabled(false);
+        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(422, Short.MAX_VALUE)
-                .add(jButton1)
-                .addContainerGap())
             .add(layout.createSequentialGroup()
-                .add(14, 14, 14)
-                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 470, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(layout.createSequentialGroup()
+                        .add(59, 59, 59)
+                        .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 445, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(layout.createSequentialGroup()
+                        .add(29, 29, 29)
+                        .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 233, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(layout.createSequentialGroup()
+                        .add(14, 14, 14)
+                        .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 470, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 106, Short.MAX_VALUE)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jButton2)
+                            .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(16, 16, 16))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                        .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 178, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 327, Short.MAX_VALUE)
-                .add(jButton1)
+                .add(jLabel1)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 333, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 31, Short.MAX_VALUE)
+                .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 163, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(24, 24, 24))
+            .add(layout.createSequentialGroup()
+                .add(88, 88, 88)
+                .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(jButton2)
+                .add(138, 138, 138)
+                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 124, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -99,11 +166,33 @@ public class vista2 extends javax.swing.JFrame {
         dispose();// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        AudioClip sonido;
+        sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
+        sonido.play();
+        //dimesion de mi panel
+        
+        int witdh = credito.getWidth();
+        int height = credito.getHeight();
+        credito.setLayout(new BorderLayout());
+        // llamao a mi calse 
+        Creditos titulo = new Creditos();
+              
+        //  GameMemory game = new GameMemory();
+        titulo.setPreferredSize(new Dimension(witdh, height));
+        credito.add("Center", titulo);
+        credito.updateUI();
+        credito.validate();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    
     /**
     * @param args the command line arguments
     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new vista2().setVisible(true);
             }
@@ -111,8 +200,12 @@ public class vista2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel credito;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 
 }
