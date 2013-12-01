@@ -2,21 +2,25 @@ package botones;
 
 import ImagenFondo.ImagenFondo;
 import java.applet.AudioClip;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 public class view extends JFrame {
+
     private final ImagenFondo modelo = new ImagenFondo("preview.png");
     //ImagenFondo im = new ImagenFondo();
     private AudioClip sonido;
-public view(){
-    setContentPane(modelo);
-    initComponents();
-   // modelo.add(this);
-    setLocationRelativeTo(null);//centra la pantalla
-  //  setResizable(false);// desabilita que se maximise
-}
 
- //   @SuppressWarnings("unchecked")
+    public view() {
+        setContentPane(modelo);
+        initComponents();
+        // modelo.add(this);
+        setLocationRelativeTo(null);//centra la pantalla
+        //  setResizable(false);// desabilita que se maximise
+    }
+
+    //   @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -74,10 +78,7 @@ public view(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-
-        
-        sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/sound.wav"));
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/sound.wav"));
         sonido.play();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -85,18 +86,23 @@ public view(){
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:AudioClip sonido;
         AudioClip son;
-        son=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
+        son = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
         son.play();
-        sonido.stop();
-        vista  obj = new vista();// declaro el objeto
+        //sonido.stop();
+        vista obj = new vista();// declaro el objeto
         obj.setVisible(true);
-        dispose();
+
+        try {
+            this.finalize();
+        } catch (Throwable ex) {
+            Logger.getLogger(view.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -104,11 +110,8 @@ public view(){
             }
         });
     }
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
-
 }
