@@ -35,7 +35,7 @@ public class Creditos extends JLabel {
         g.drawString("AREA DE RECURSOS HUMANOS", 15, 170);
         g.drawString("AREA DE INFORMATICA", 15, 190);
         g.drawString("", 10, 210);
-        /* g.setColor(Color.GRAY);
+      /* g.setColor(Color.GRAY);
          g.drawString("tienes 10 oportunidades para ganar", 10, 230);
          g.drawString("s", 10, 250);
          g.drawString("", 10,270);

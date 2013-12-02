@@ -11,14 +11,12 @@
 package botones;
 
 import Creditos.Creditos;
-import Games.Memoria.GameMemory;
+import Creditos.Instrucciones;
 import ImagenFondo.ImagenFondo;
 import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -32,6 +30,8 @@ public class vista2 extends JFrame {
 
     private final ImagenFondo modelo1 = new ImagenFondo("/ImagenFondo/preview2.png");
     private AudioClip game;
+    private Creditos titulo = new Creditos();
+    private Instrucciones ints = new Instrucciones();
 
     /**
      * Creates new form vista2
@@ -51,16 +51,23 @@ public class vista2 extends JFrame {
         setLocationRelativeTo(null);
 
         disableButton();
+      
     }
 
     public void disableButton() {
+        //deshabilita
         btn1.setEnabled(false);
         btn2.setEnabled(false);
     }
 
     public void enableButton() {
-        btn1.setEnabled(true);
+       //habilita
         btn2.setEnabled(true);
+    }
+    
+    public void enableButton2() {
+       //habilita
+        btn1.setEnabled(true);
     }
 
     /**
@@ -124,10 +131,20 @@ public class vista2 extends JFrame {
         jButton3.setFocusPainted(false);
         jButton3.setFocusTraversalKeysEnabled(false);
         jButton3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         btn1.setText("jButton4");
 
         btn2.setText("jButton5");
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -198,8 +215,9 @@ public class vista2 extends JFrame {
         vista obj = new vista();// declaro el objeto
         obj.setVisible(true);
         //dispose();// TODO add your handling code here:
-        try {
-            this.finalize();
+       
+         try {finalize();
+           // this.finalize();
         } catch (Throwable ex) {
             Logger.getLogger(view.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -216,15 +234,35 @@ public class vista2 extends JFrame {
         int height = credito.getHeight();
         credito.setLayout(new BorderLayout());
         // llamao a mi calse 
-        Creditos titulo = new Creditos();
-
-        //  GameMemory game = new GameMemory();
+     // Creditos titulo = new Creditos();
         titulo.setPreferredSize(new Dimension(witdh, height));
         credito.add("Center", titulo);
         credito.updateUI();
         credito.validate();
+        
+        
+       //habilita
         enableButton();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        // TODO add your handling code here:
+         enableButton2();
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        
+        int witdh = credito.getWidth();
+        int height = credito.getHeight();
+        credito.setLayout(new BorderLayout());
+       // Instrucciones ints = new Instrucciones();
+        ints.setPreferredSize(new Dimension(witdh, height));
+        credito.add("Center", ints);
+        credito.updateUI();
+        credito.validate();
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
