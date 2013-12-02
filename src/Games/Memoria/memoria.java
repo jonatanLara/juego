@@ -1,11 +1,8 @@
-
-
 /*
  * Memorama.java
  *
  * Created on 28-sep-2013, 18:43:14
  */
-
 package Games.Memoria;
 
 import ImagenFondo.ImagenFondo;
@@ -14,29 +11,22 @@ import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
-
 public class memoria extends javax.swing.JFrame {
-    //imagen de fondo
-  private final ImagenFondo modelo = new ImagenFondo("/ImagenFondo/preview.png");
 
-    /** Creates new form Memorama */
+    //imagen de fondo
+    private final ImagenFondo modelo = new ImagenFondo("/ImagenFondo/preview.png");
+
     private AudioClip fondo;
+
     public memoria() {
         setUndecorated(true);
         setContentPane(modelo);
-        fondo=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/ambient_red_savannah.wav"));
+        fondo = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/ambient_red_savannah.wav"));
         fondo.play();
-         
         initComponents();
-        // centrar la pantalla
         setLocationRelativeTo(null);
-        //imagen de fondo
-        
-       
-        
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -126,16 +116,16 @@ public class memoria extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         AudioClip boton;
-        boton=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
+        boton = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
         boton.play();
         fondo.stop();
-        vista obj = new vista ();// declaro el objeto
+        vista obj = new vista();
         obj.setVisible(true);
-        dispose();       
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-           //    BOTON FACIL
+    //    BOTON FACIL
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        principal.removeAll();
         //dimesion de mi panel
         int witdh = principal.getWidth();
         int height = principal.getHeight();
@@ -148,13 +138,11 @@ public class memoria extends javax.swing.JFrame {
         principal.validate();
         //    AUDIO    
         AudioClip sonido;
-        sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
         sonido.play();
     }//GEN-LAST:event_jButton2ActionPerformed
-            //   BOTON MEDIO 
+    //   BOTON MEDIO 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-              // BOTON MEDIO  
-        
         int witdh = principal.getWidth();
         int height = principal.getHeight();
         principal.setLayout(new BorderLayout());
@@ -163,17 +151,14 @@ public class memoria extends javax.swing.JFrame {
         principal.add("Center", game);
         principal.updateUI();
         principal.validate();
-        
-        //
         AudioClip sonido;
-        sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
+        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
         sonido.play();
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
