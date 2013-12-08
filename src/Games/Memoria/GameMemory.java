@@ -139,7 +139,7 @@ public class GameMemory extends JLabel {
           
             if (result) {      
                 //    ganaste
-              
+                
                 canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/felicidades.gif")).getImage());
                 
                 

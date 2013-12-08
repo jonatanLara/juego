@@ -120,7 +120,8 @@ public class Salir extends javax.swing.JFrame {
         jButton1.addMouseListener(new  MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e){
-                System.exit(vista.EXIT_ON_CLOSE);
+              System.exit(vista.EXIT_ON_CLOSE);
+              
             }
         });
     }//GEN-LAST:event_jButton1ActionPerformed

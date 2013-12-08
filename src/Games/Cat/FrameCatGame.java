@@ -6,17 +6,22 @@
 
 package Games.Cat;
 
+import ImagenFondo.ImagenFondo;
+import botones.vista;
+import java.applet.AudioClip;
+
 /**
  *
  * @author Atxy2k
  */
 public class FrameCatGame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrameCatGame
-     */
+     private final ImagenFondo modelo = new ImagenFondo("preview.png");
+     
     public FrameCatGame() {
+        setContentPane(modelo);
         initComponents();
+         setLocationRelativeTo(null);//centra la pantalla
     }
 
     /**
@@ -29,23 +34,36 @@ public class FrameCatGame extends javax.swing.JFrame {
     private void initComponents() {
 
         catGame1 = new Games.Cat.CatGame();
+        jButton1 = new javax.swing.JButton();
+        gana = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 500));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(catGame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 74, 448, 440));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(catGame1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(catGame1, javax.swing.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
-        );
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 543, -1, -1));
+        getContentPane().add(gana, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 330, 260));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AudioClip son;
+        son = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
+        son.play();
+        //sonido.stop();
+        vista obj = new vista();// declaro el objeto
+        obj.setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -84,5 +102,7 @@ public class FrameCatGame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Games.Cat.CatGame catGame1;
+    private javax.swing.JLabel gana;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

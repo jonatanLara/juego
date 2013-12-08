@@ -10,14 +10,14 @@ import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 /**
  *
  * @author Atxy2k
  */
-public class CatGame extends JPanel{
+public class CatGame extends JLabel{
 
     private final ArrayList<FigureCat> cards = new ArrayList<FigureCat>();
     private boolean circle = false;
@@ -58,9 +58,12 @@ public class CatGame extends JPanel{
     private void checkWin(){
         boolean win = false;
         int count = 0;
+       
+        
         for (int i = 0; i < cards.size(); i++) {
             if (!cards.get(i).isBlock()) {
                 count++;
+                
             }
         }
         if (count>=5) {
@@ -68,17 +71,23 @@ public class CatGame extends JPanel{
                 win = true;
             }
         }
+        //juego ganado 1
         if (win) {
+            
+            
             JOptionPane.showMessageDialog(this, "Ganaste!");
             this.init();
             this.repaint();
-        }else{
+       
+            
+        }else{//si no hay ganador esto es un gato encerraado
             if (cat()) {
                 JOptionPane.showMessageDialog(this, "Gato", "Gato!", JOptionPane.ERROR_MESSAGE);
                 this.init();
                 this.repaint();
             }
         }
+        
     }
     
     public boolean cat(){

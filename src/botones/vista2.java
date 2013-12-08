@@ -161,10 +161,7 @@ public class vista2 extends JFrame {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(btn1)
                         .add(18, 18, 18)
-                        .add(btn2))
-                    .add(layout.createSequentialGroup()
-                        .add(14, 14, 14)
-                        .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 470, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(btn2)))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 106, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
@@ -175,13 +172,16 @@ public class vista2 extends JFrame {
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                         .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 178, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
+            .add(layout.createSequentialGroup()
+                .add(59, 59, 59)
+                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 470, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
                 .add(jLabel1)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(12, 12, 12)
                 .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 333, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
@@ -214,13 +214,13 @@ public class vista2 extends JFrame {
         sonido.play();
         vista obj = new vista();// declaro el objeto
         obj.setVisible(true);
-        //dispose();// TODO add your handling code here:
+        this.dispose();
        
-         try {finalize();
+       /*  try {finalize();
            // this.finalize();
         } catch (Throwable ex) {
             Logger.getLogger(view.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -234,15 +234,14 @@ public class vista2 extends JFrame {
         int height = credito.getHeight();
         credito.setLayout(new BorderLayout());
         // llamao a mi calse 
-     // Creditos titulo = new Creditos();
+       //  Creditos titulo = new Creditos();
         titulo.setPreferredSize(new Dimension(witdh, height));
         credito.add("Center", titulo);
         credito.updateUI();
         credito.validate();
-        
-        
-       //habilita
+          //habilita
         enableButton();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
@@ -260,7 +259,7 @@ public class vista2 extends JFrame {
         credito.add("Center", ints);
         credito.updateUI();
         credito.validate();
-        
+        remove(this);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 

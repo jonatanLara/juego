@@ -89,15 +89,15 @@ public class view extends JFrame {
         son = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
         son.play();
         //sonido.stop();
-        vista obj = new vista();// declaro el objeto
+       /* vista obj = new vista();// declaro el objeto
         obj.setVisible(true);
-
-        try {
+         this.dispose();
+        /*try {
             this.finalize();
         } catch (Throwable ex) {
             Logger.getLogger(view.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+*/
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
