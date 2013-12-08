@@ -14,8 +14,6 @@ import Salir.Salir;
 
 import java.applet.AudioClip;
 import java.awt.Cursor;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 
 
@@ -33,7 +31,8 @@ public class vista extends JFrame {
         setContentPane(modelo);
         
         game=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/game.wav"));
-        game.play();
+        game.loop();
+        //game.play();
         
         initComponents();
         

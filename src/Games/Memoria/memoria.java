@@ -143,6 +143,7 @@ public class memoria extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
     //   BOTON MEDIO 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        principal.removeAll();
         int witdh = principal.getWidth();
         int height = principal.getHeight();
         principal.setLayout(new BorderLayout());

@@ -11,6 +11,7 @@
 package botones;
 
 import Creditos.Creditos;
+import Creditos.Ins2;
 import Creditos.Instrucciones;
 import ImagenFondo.ImagenFondo;
 import java.applet.AudioClip;
@@ -153,16 +154,16 @@ public class vista2 extends JFrame {
             .add(layout.createSequentialGroup()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .add(59, 59, 59)
-                        .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 445, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(layout.createSequentialGroup()
                         .add(29, 29, 29)
                         .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 233, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(btn1)
                         .add(18, 18, 18)
-                        .add(btn2)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 106, Short.MAX_VALUE)
+                        .add(btn2))
+                    .add(layout.createSequentialGroup()
+                        .add(44, 44, 44)
+                        .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 445, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 121, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -181,7 +182,7 @@ public class vista2 extends JFrame {
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .add(jLabel1)
-                .add(12, 12, 12)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 333, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
@@ -225,6 +226,7 @@ public class vista2 extends JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        credito.removeAll();
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
         sonido.play();
@@ -239,14 +241,23 @@ public class vista2 extends JFrame {
         credito.add("Center", titulo);
         credito.updateUI();
         credito.validate();
-          //habilita
-        enableButton();
+         
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
          enableButton2();
+        credito.removeAll();   
+        int witdh = credito.getWidth();
+        int height = credito.getHeight();
+        credito.setLayout(new BorderLayout());
+        Ins2 ints2 = new Ins2();
+        ints2.setPreferredSize(new Dimension(witdh, height));
+        credito.add("Center", ints2);
+        credito.updateUI();
+        credito.validate();
+         
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -259,6 +270,8 @@ public class vista2 extends JFrame {
         credito.add("Center", ints);
         credito.updateUI();
         credito.validate();
+         //habilita
+        enableButton();
         remove(this);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
