@@ -36,9 +36,6 @@ public class vista extends JFrame {
         
         initComponents();
         
-        //Imagen de Fondo.
-   //     this.add(f,BorderLayout.CENTER);
-     //   this.pack();
         //cursor
         jButton3.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -214,7 +211,7 @@ public class vista extends JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         AudioClip sonido;
-        sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Notify.wav"));
+        sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
         sonido.play();
         game.stop();
         Salir salir =new  Salir();

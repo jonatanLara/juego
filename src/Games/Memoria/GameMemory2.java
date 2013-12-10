@@ -20,13 +20,13 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
-import javax.swing.JPanel;
+import javax.swing.JLabel;
 
 /**
  *
  * @author Atxy2k
  */
-public class GameMemory2 extends JPanel{
+public class GameMemory2 extends JLabel{
 
     private ArrayList<CardPanel> all = new ArrayList<CardPanel>();
     private ArrayList<CardPanel> selected = new ArrayList<CardPanel>();
