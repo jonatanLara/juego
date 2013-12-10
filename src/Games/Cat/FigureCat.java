@@ -30,8 +30,8 @@ public class FigureCat extends CustomCanvas{
         //defaul la del BORREGO
         defaultimage = new ImageIcon(getClass().getResource("/image/gat.gif")).getImage();
         //circulo
-        xImage = new ImageIcon(getClass().getResource("/image/blue_circle.png")).getImage();
-        circleImage = new ImageIcon(getClass().getResource("/image/green_x.png")).getImage();
+        xImage = new ImageIcon(getClass().getResource("/image/cat_1.png")).getImage();
+        circleImage = new ImageIcon(getClass().getResource("/image/gat1.png")).getImage();
     }
     
     @Override

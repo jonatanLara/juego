@@ -20,6 +20,7 @@ public class FrameCatGame extends javax.swing.JFrame {
      
     public FrameCatGame() {
         setContentPane(modelo);
+        setUndecorated(true);
         initComponents();
          setLocationRelativeTo(null);//centra la pantalla
     }
@@ -40,16 +41,22 @@ public class FrameCatGame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(catGame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 74, 448, 440));
+        getContentPane().add(catGame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 440, 430));
 
-        jButton1.setText("jButton1");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu2.png"))); // NOI18N
+        jButton1.setToolTipText("MENU");
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setDefaultCapable(false);
+        jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu3.png"))); // NOI18N
+        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 543, -1, -1));
-        getContentPane().add(gana, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 330, 260));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 462, 120, 120));
+        getContentPane().add(gana, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 500, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -102,7 +109,7 @@ public class FrameCatGame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Games.Cat.CatGame catGame1;
-    private javax.swing.JLabel gana;
+    public javax.swing.JLabel gana;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

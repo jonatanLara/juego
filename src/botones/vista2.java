@@ -93,6 +93,7 @@ public class vista2 extends JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N
+        jButton1.setToolTipText("MENU");
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         jButton1.setDefaultCapable(false);
@@ -107,6 +108,7 @@ public class vista2 extends JFrame {
         jLabel1.setText("<<<     TITULOS     >>>");
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoInicial/logo1.png"))); // NOI18N
+        jButton2.setToolTipText("JABAKIDS");
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
         jButton2.setDefaultCapable(false);
@@ -118,6 +120,7 @@ public class vista2 extends JFrame {
         });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoInicial/Imagen-animada-de-Cocodrilo-29.gif"))); // NOI18N
+        jLabel2.setToolTipText("!!HOLA MI NOMBRE ES COCONILO !! BIENVENIDO A MI HOGAR !!");
 
         jButton3.setFont(new java.awt.Font("Herculanum", 0, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(102, 51, 0));
@@ -138,9 +141,22 @@ public class vista2 extends JFrame {
             }
         });
 
-        btn1.setText("jButton4");
+        btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/at.png"))); // NOI18N
+        btn1.setToolTipText("ATRAS");
+        btn1.setBorderPainted(false);
+        btn1.setContentAreaFilled(false);
+        btn1.setDefaultCapable(false);
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
 
-        btn2.setText("jButton5");
+        btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/at2.png"))); // NOI18N
+        btn2.setToolTipText("SIGUIENTE");
+        btn2.setBorderPainted(false);
+        btn2.setContentAreaFilled(false);
+        btn2.setDefaultCapable(false);
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn2ActionPerformed(evt);
@@ -162,8 +178,8 @@ public class vista2 extends JFrame {
                         .add(btn2))
                     .add(layout.createSequentialGroup()
                         .add(44, 44, 44)
-                        .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 445, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 121, Short.MAX_VALUE)
+                        .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 451, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 119, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -171,7 +187,7 @@ public class vista2 extends JFrame {
                             .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .add(16, 16, 16))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 178, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jButton3)
                         .addContainerGap())))
             .add(layout.createSequentialGroup()
                 .add(59, 59, 59)
@@ -183,18 +199,16 @@ public class vista2 extends JFrame {
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .add(jLabel1)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 333, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 364, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 163, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(layout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 31, Short.MAX_VALUE)
-                        .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 163, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(24, 24, 24))
-                    .add(layout.createSequentialGroup()
-                        .add(74, 74, 74)
+                        .add(43, 43, 43)
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                             .add(btn1)
-                            .add(btn2))
-                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .add(btn2))))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .add(layout.createSequentialGroup()
                 .add(88, 88, 88)
                 .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -241,14 +255,17 @@ public class vista2 extends JFrame {
         credito.add("Center", titulo);
         credito.updateUI();
         credito.validate();
-         
+        
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         // TODO add your handling code here:
-         enableButton2();
+        enableButton2();
         credito.removeAll();   
+        AudioClip boton;
+        boton = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
+        boton.play();
         int witdh = credito.getWidth();
         int height = credito.getHeight();
         credito.setLayout(new BorderLayout());
@@ -261,7 +278,10 @@ public class vista2 extends JFrame {
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
+        credito.removeAll();
+        AudioClip boton;
+        boton = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
+        boton.play();
         int witdh = credito.getWidth();
         int height = credito.getHeight();
         credito.setLayout(new BorderLayout());
@@ -275,6 +295,27 @@ public class vista2 extends JFrame {
         remove(this);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+        credito.removeAll(); 
+        
+        int witdh = credito.getWidth();
+        int height = credito.getHeight();
+        credito.setLayout(new BorderLayout());
+       // Instrucciones ints = new Instrucciones();
+        ints.setPreferredSize(new Dimension(witdh, height));
+        credito.add("Center", ints);
+        credito.updateUI();
+        credito.validate();
+         //habilita
+        enableButton();
+       // remove(this);
+        AudioClip boton;
+        boton = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
+        boton.play();
+        
+        
+    }//GEN-LAST:event_btn1ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -121,6 +121,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/LogoInicial/burla.gif"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Si deseas continuar Oprime CANCELAR"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -128,6 +129,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/ImagenFondo/coco.gif"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Si deseas Salir Oprime ACEPTAR"/>
       </Properties>
     </Component>
   </SubComponents>

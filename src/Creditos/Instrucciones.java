@@ -16,10 +16,12 @@ import javax.swing.JLabel;
 public class Instrucciones extends JLabel {
   
      private Image icono = null;
+     private Image icono2 = null;
     public Instrucciones() {
       
         setVisible(true);
         icono = new ImageIcon(getClass().getResource("/image/run.gif")).getImage();
+        icono2 = new ImageIcon(getClass().getResource("/image/niveles.gif")).getImage();
     }
    
     @Override
@@ -28,9 +30,11 @@ public class Instrucciones extends JLabel {
         g.setColor(new Color(102, 51, 0));
         setFont(new java.awt.Font("HERCULANUM", 500, 16));
     //  g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-        g.drawString("  instrucciones del juego ", 60, 60);
-        g.drawString("paso 1: seleccione el icono :", 40, 90);
-        g.drawImage(icono, 30, 120, labelFor);
+        g.drawString("  instrucciones del juego ", 60, 45);
+        g.drawString("paso 1: seleccione el icono :", 40, 65);
+        g.drawImage(icono, 30, 70, labelFor);
+        g.drawString("paso 2: seleccione el icono :", 40, 240);
+        g.drawImage(icono2, 30, 245, labelFor);
         
         /* g.drawString("paso 2: seleciones la que crea, ", 15, 130);
         g.drawString("  que es igual a la primera carta", 15, 150);

@@ -22,13 +22,13 @@ public class CustomCanvas extends Canvas{
     public CustomCanvas(float rWidth, float rHeight) {
         this.rWidth = rWidth;
         this.rHeight = rHeight;
-        setBackground(Color.white);
+    //    setBackground(Color.white);
     }
 
     public CustomCanvas() {
         this.rWidth = 10.0F;
         this.rHeight = 10.0F;
-        setBackground(Color.white);
+      //  setBackground(Color.white);
     }
     private void initComponents(){
         Dimension d = getSize();
@@ -47,7 +47,8 @@ public class CustomCanvas extends Canvas{
 
     @Override
     public void paint(Graphics g){
-        g.setColor(Color.white);
+       g.setColor(Color.white);
+        
         g.fillRect(0, 0, getWidth(), getHeight());
       //  g.setColor(Color.black);
         initComponents();

@@ -28,12 +28,12 @@ public class Creditos extends JLabel {
         //setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
         setFont(new java.awt.Font("HERCULANUM", 500, 16));
         //15 es mi separacion lateral y 90 es hacia abajo 
-        g.drawString("Este juego fue creado por Jabakids S.A de C.V", 15, 60);
-        g.drawString("DESARROLLADORES", 15, 110);
-        g.drawString("AREA ADMINISTRATIVA", 15, 130);
-        g.drawString("AREA DE MERCADOTECNIA", 15, 150);
-        g.drawString("AREA DE RECURSOS HUMANOS", 15, 170);
-        g.drawString("AREA DE INFORMATICA", 15, 190);
+        g.drawString("Este juego fue creado por Jabakids S.A de C.V ", 30, 60);
+        g.drawString("DESARROLLADORES", 30, 110);
+        g.drawString("AREA ADMINISTRATIVA", 30, 130);
+        g.drawString("AREA DE MERCADOTECNIA", 30, 150);
+        g.drawString("AREA DE RECURSOS HUMANOS", 30, 170);
+        g.drawString("AREA DE INFORMATICA", 30, 190);
         g.drawString("", 10, 210);
       /* g.setColor(Color.GRAY);
          g.drawString("tienes 10 oportunidades para ganar", 10, 230);

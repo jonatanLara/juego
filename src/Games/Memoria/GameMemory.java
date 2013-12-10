@@ -29,7 +29,7 @@ public class GameMemory extends JLabel {
     private ArrayList<CardPanel> all = new ArrayList<CardPanel>();
     private ArrayList<CardPanel> selected = new ArrayList<CardPanel>();
     private int images = 10;
-    private int maxIntents = 10;
+    private int maxIntents = 12;
     private int intents = 0;
 
     public GameMemory() {
@@ -150,7 +150,7 @@ public class GameMemory extends JLabel {
                 
             } else {  
                 // perdiste
-                canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/felicidades.gif")).getImage());
+                canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/bob.gif")).getImage());
                 AudioClip loser;
                 loser = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Abucheo.wav"));
                 loser.play();

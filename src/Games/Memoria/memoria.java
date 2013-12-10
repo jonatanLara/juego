@@ -22,6 +22,7 @@ public class memoria extends javax.swing.JFrame {
         setUndecorated(true);
         setContentPane(modelo);
         fondo = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/ambient_red_savannah.wav"));
+        fondo.loop();
         fondo.play();
         initComponents();
         setLocationRelativeTo(null);
@@ -67,6 +68,7 @@ public class memoria extends javax.swing.JFrame {
         });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu2.png"))); // NOI18N
+        jButton1.setToolTipText("MENU");
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
         jButton1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/image/menu.png"))); // NOI18N

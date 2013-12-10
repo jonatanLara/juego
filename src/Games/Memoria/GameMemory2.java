@@ -17,6 +17,8 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -29,7 +31,7 @@ public class GameMemory2 extends JPanel{
     private ArrayList<CardPanel> all = new ArrayList<CardPanel>();
     private ArrayList<CardPanel> selected = new ArrayList<CardPanel>();
     private int images = 15;
-    private int maxIntents = 12;
+    private int maxIntents = 17;
     private int intents = 0;
     
     public GameMemory2() {
@@ -73,8 +75,32 @@ public class GameMemory2 extends JPanel{
         }
     }
     // METODO DE COMPARACION 
+                    //   HILO
+    private class HiloRegresaAtras extends Thread {
+          @Override
+          public void run() {
+            try {
+                // ESPERO 1 SEG 
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                 Logger.getLogger(GameMemory2.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            //selecion de mi primera carta
+            selected.get(0).block();
+            selected.get(0).repaint();
+            //selecion de mi segunda carta
+            selected.get(1).block();
+            selected.get(1).repaint();
+            
+            selected.remove(0);
+            selected.remove(0);
+            intents += 1;
+
+        }
+    }
+    // METODO DE COMPARACION 
     private void check(){
-        if (selected.size()==3) {
+        if (selected.size()==2) {
             if (selected.get(0).compareTo(selected.get(1))) {
                 selected.remove(0);
                 selected.remove(0);
@@ -86,14 +112,8 @@ public class GameMemory2 extends JPanel{
                      sonido.play();
            
             }else{
-                selected.get(0).block();
-                selected.get(0).repaint();
-                selected.get(1).block();
-                selected.get(1).repaint();
-                selected.remove(0);
-                selected.remove(0);
-                   
-                intents+=1;
+               HiloRegresaAtras hilo = new HiloRegresaAtras();
+                hilo.start();
                 
             }
         }

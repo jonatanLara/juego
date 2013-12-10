@@ -66,8 +66,10 @@ public class Salir extends javax.swing.JFrame {
         jLabel1.setText("DESEA SALIR DEL JUEGO ?");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoInicial/burla.gif"))); // NOI18N
+        jLabel2.setToolTipText("Si deseas continuar Oprime CANCELAR");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenFondo/coco.gif"))); // NOI18N
+        jLabel3.setToolTipText("Si deseas Salir Oprime ACEPTAR");
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

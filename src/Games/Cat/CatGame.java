@@ -6,10 +6,12 @@
 
 package Games.Cat;
 
+import java.applet.AudioClip;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -47,8 +49,13 @@ public class CatGame extends JLabel{
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     card.flip(circle);
+                         AudioClip combo32;
+                         combo32 = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/combo32.wav"));
+                         combo32.play();
                     circle = !circle;
                     checkWin();
+                    System.out.println(!circle);
+                    System.out.println(circle);
                 }
             });
         }
@@ -62,6 +69,7 @@ public class CatGame extends JLabel{
         
         for (int i = 0; i < cards.size(); i++) {
             if (!cards.get(i).isBlock()) {
+                
                 count++;
                 
             }
@@ -72,19 +80,31 @@ public class CatGame extends JLabel{
             }
         }
         //juego ganado 1
-        if (win) {
-            
-            
-            JOptionPane.showMessageDialog(this, "Ganaste!");
-            this.init();
-            this.repaint();
+        if (win) { 
+            if (circle) {
+                 System.out.println("ganador " +circle);
+            }else if(!circle){
+                System.out.println("ganador "+ !circle);
+            }
+           
+               /* AudioClip ganador;
+                ganador = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Applause.wav"));
+                ganador.play();*/
+                
+                JOptionPane.showMessageDialog(this, "Ganaste!");
+                this.init();
+                this.repaint();
        
             
         }else{//si no hay ganador esto es un gato encerraado
             if (cat()) {
+                AudioClip loser;
+                loser = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/cat1.wav"));
+                loser.play();
                 JOptionPane.showMessageDialog(this, "Gato", "Gato!", JOptionPane.ERROR_MESSAGE);
                 this.init();
                 this.repaint();
+                
             }
         }
         
