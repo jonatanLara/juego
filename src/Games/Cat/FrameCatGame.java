@@ -22,7 +22,7 @@ public class FrameCatGame extends javax.swing.JFrame {
         setContentPane(modelo);
         setUndecorated(true);
         initComponents();
-         setLocationRelativeTo(null);//centra la pantalla
+        setLocationRelativeTo(null);//centra la pantalla
     }
 
     /**
