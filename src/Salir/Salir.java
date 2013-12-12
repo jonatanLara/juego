@@ -46,6 +46,7 @@ public class Salir extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Herculanum", 0, 13)); // NOI18N
         jButton1.setForeground(new java.awt.Color(102, 51, 0));
         jButton1.setText("aceptar");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -55,6 +56,7 @@ public class Salir extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Herculanum", 0, 13)); // NOI18N
         jButton2.setForeground(new java.awt.Color(102, 51, 0));
         jButton2.setText("cancelar");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

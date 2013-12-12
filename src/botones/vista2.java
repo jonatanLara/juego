@@ -145,6 +145,7 @@ public class vista2 extends JFrame {
         btn1.setToolTipText("ATRAS");
         btn1.setBorderPainted(false);
         btn1.setContentAreaFilled(false);
+        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn1.setDefaultCapable(false);
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,6 +157,7 @@ public class vista2 extends JFrame {
         btn2.setToolTipText("SIGUIENTE");
         btn2.setBorderPainted(false);
         btn2.setContentAreaFilled(false);
+        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn2.setDefaultCapable(false);
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
