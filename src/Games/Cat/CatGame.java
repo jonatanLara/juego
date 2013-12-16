@@ -52,10 +52,9 @@ public class CatGame extends JLabel{
                          AudioClip combo32;
                          combo32 = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/combo32.wav"));
                          combo32.play();
-                    circle = !circle;
+                    circle =!circle;
                     checkWin();
-                    System.out.println(!circle);
-                    System.out.println(circle);
+                   
                 }
             });
         }
@@ -78,16 +77,13 @@ public class CatGame extends JLabel{
             if (win()) {
                 win = true;
             }
+            
         }
         //juego ganado 1
         if (win) { 
-            if (circle) {
-                 System.out.println("ganador " +circle);
-            }else if(!circle){
-                System.out.println("ganador "+ !circle);
-            }
+          
            
-               /* AudioClip ganador;
+              /* AudioClip ganador;
                 ganador = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Applause.wav"));
                 ganador.play();*/
                 
@@ -117,7 +113,7 @@ public class CatGame extends JLabel{
                 n++;
             }
         }
-        System.out.println(n);
+      //  System.out.println(n);
         return n==cards.size();
     }
     

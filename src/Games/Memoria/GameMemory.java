@@ -150,7 +150,7 @@ public class GameMemory extends JLabel {
                 
             } else {  
                 // perdiste
-                canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/bob.gif")).getImage());
+                canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/que.gif")).getImage());
                 AudioClip loser;
                 loser = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Abucheo.wav"));
                 loser.play();

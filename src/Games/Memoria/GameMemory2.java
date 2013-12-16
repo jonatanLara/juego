@@ -146,21 +146,21 @@ public class GameMemory2 extends JLabel{
             Background canvas;
             if (result) {      //    ganaste
                 
-                canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/smile.png")).getImage());
+                canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/felicidades.gif")).getImage());
                 
                 //     AUDIO   //    
-                AudioClip sonido;
-                sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Applause.wav"));
-                sonido.play();
+                AudioClip ganador;
+                ganador=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Applause.wav"));
+                ganador.play();
             }else{   // perdiste
                 
-                canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/happy.png")).getImage());
+                canvas = new Background(image, new ImageIcon(getClass().getResource("/imagenes/que.gif")).getImage());
               
                 //     AUDIO    //
                 
-                AudioClip sonido;
-                sonido=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Abucheo.wav"));
-                sonido.play();
+                AudioClip perdedor;
+                perdedor=java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Abucheo.wav"));
+                perdedor.play();
             }
             this.add("Center", canvas);
             this.updateUI();

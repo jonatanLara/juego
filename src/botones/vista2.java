@@ -33,6 +33,7 @@ public class vista2 extends JFrame {
     private AudioClip game;
     private Creditos titulo = new Creditos();
     private Instrucciones ints = new Instrucciones();
+    private AudioClip fondo;
 
     /**
      * Creates new form vista2
@@ -41,7 +42,9 @@ public class vista2 extends JFrame {
 
         setUndecorated(true);
         setContentPane(modelo1);
-
+        fondo = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/ambient_red_savannah.wav"));
+        fondo.loop();
+        fondo.play();
 
         // vista2.add(this);
         initComponents();
@@ -107,7 +110,9 @@ public class vista2 extends JFrame {
         jLabel1.setForeground(new java.awt.Color(102, 51, 0));
         jLabel1.setText("<<<     TITULOS     >>>");
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoInicial/logo1.png"))); // NOI18N
+        jButton2.setFont(new java.awt.Font("Herculanum", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(102, 51, 0));
+        jButton2.setText("creditos");
         jButton2.setToolTipText("JABAKIDS");
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
@@ -184,13 +189,14 @@ public class vista2 extends JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 120, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jButton2)
-                            .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(16, 16, 16))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                         .add(jButton3)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                        .add(jButton2)
+                        .add(35, 35, 35))))
             .add(layout.createSequentialGroup()
                 .add(59, 59, 59)
                 .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 470, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -214,9 +220,9 @@ public class vista2 extends JFrame {
             .add(layout.createSequentialGroup()
                 .add(88, 88, 88)
                 .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(134, 134, 134)
                 .add(jButton2)
-                .add(138, 138, 138)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 124, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

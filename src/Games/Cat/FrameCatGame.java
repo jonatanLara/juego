@@ -17,9 +17,13 @@ import java.applet.AudioClip;
 public class FrameCatGame extends javax.swing.JFrame {
 
      private final ImagenFondo modelo = new ImagenFondo("preview.png");
+     private AudioClip fondo;
      
     public FrameCatGame() {
         setContentPane(modelo);
+        fondo = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/ambient_red_savannah.wav"));
+        fondo.loop();
+        fondo.play();
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);//centra la pantalla
