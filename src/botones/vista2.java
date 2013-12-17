@@ -18,8 +18,6 @@ import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.Cursor;
 import java.awt.Dimension;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 /**
@@ -31,31 +29,24 @@ public class vista2 extends JFrame {
 
     private final ImagenFondo modelo1 = new ImagenFondo("/ImagenFondo/preview2.png");
     private AudioClip game;
-    private Creditos titulo = new Creditos();
-    private Instrucciones ints = new Instrucciones();
-    private AudioClip fondo;
+    private final Creditos titulo = new Creditos();
+    private final Instrucciones ints = new Instrucciones();
+    private final AudioClip fondo;
 
     /**
      * Creates new form vista2
      */
     public vista2() {
-
         setUndecorated(true);
         setContentPane(modelo1);
         fondo = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/ambient_red_savannah.wav"));
         fondo.loop();
         fondo.play();
-
-        // vista2.add(this);
         initComponents();
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
-
-        //move(450, 300);
         setLocationRelativeTo(null);
-
         disableButton();
-      
     }
 
     public void disableButton() {
@@ -68,12 +59,10 @@ public class vista2 extends JFrame {
        //habilita
         btn2.setEnabled(true);
     }
-    
     public void enableButton2() {
        //habilita
         btn1.setEnabled(true);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -135,10 +124,9 @@ public class vista2 extends JFrame {
         jButton3.setAlignmentY(0.0F);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton3.setDefaultCapable(false);
         jButton3.setFocusPainted(false);
-        jButton3.setFocusTraversalKeysEnabled(false);
         jButton3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,7 +138,7 @@ public class vista2 extends JFrame {
         btn1.setToolTipText("ATRAS");
         btn1.setBorderPainted(false);
         btn1.setContentAreaFilled(false);
-        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn1.setDefaultCapable(false);
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +150,7 @@ public class vista2 extends JFrame {
         btn2.setToolTipText("SIGUIENTE");
         btn2.setBorderPainted(false);
         btn2.setContentAreaFilled(false);
-        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn2.setDefaultCapable(false);
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,63 +163,57 @@ public class vista2 extends JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(29, 29, 29)
-                        .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 233, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(btn1)
-                        .add(18, 18, 18)
-                        .add(btn2))
-                    .add(layout.createSequentialGroup()
-                        .add(44, 44, 44)
-                        .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 451, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 120, Short.MAX_VALUE)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(16, 16, 16))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(jButton3)
-                        .addContainerGap())
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(jButton2)
-                        .add(35, 35, 35))))
-            .add(layout.createSequentialGroup()
                 .add(59, 59, 59)
-                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 470, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(0, 0, Short.MAX_VALUE))
+                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 470, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+            .add(layout.createSequentialGroup()
+                .add(44, 44, 44)
+                .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 451, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(120, 120, 120)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jButton3)
+                    .add(layout.createSequentialGroup()
+                        .add(17, 17, 17)
+                        .add(jButton2))))
+            .add(layout.createSequentialGroup()
+                .add(29, 29, 29)
+                .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 233, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(4, 4, 4)
+                .add(btn1)
+                .add(18, 18, 18)
+                .add(btn2)
+                .add(187, 187, 187)
+                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+            .add(layout.createSequentialGroup()
                 .add(jLabel1)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 364, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(11, 11, 11)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 364, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(layout.createSequentialGroup()
+                        .add(30, 30, 30)
+                        .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(134, 134, 134)
+                        .add(jButton2)))
+                .add(6, 6, 6)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 163, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(layout.createSequentialGroup()
                         .add(43, 43, 43)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(btn1)
-                            .add(btn2))))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .add(layout.createSequentialGroup()
-                .add(88, 88, 88)
-                .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(134, 134, 134)
-                .add(jButton2)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 124, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .add(btn1))
+                    .add(layout.createSequentialGroup()
+                        .add(43, 43, 43)
+                        .add(btn2))
+                    .add(layout.createSequentialGroup()
+                        .add(39, 39, 39)
+                        .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 124, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
         sonido.play();
@@ -239,12 +221,6 @@ public class vista2 extends JFrame {
         vista obj = new vista();// declaro el objeto
         obj.setVisible(true);
         this.dispose();
-       
-       /*  try {finalize();
-           // this.finalize();
-        } catch (Throwable ex) {
-            Logger.getLogger(view.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

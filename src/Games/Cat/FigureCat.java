@@ -23,7 +23,7 @@ public class FigureCat extends CustomCanvas{
     
     private boolean block = true;
     private boolean circle = false;
-    
+    private boolean flip = false;
     
     public FigureCat() {
         super();
