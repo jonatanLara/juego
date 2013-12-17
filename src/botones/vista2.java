@@ -235,6 +235,7 @@ public class vista2 extends JFrame {
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
         sonido.play();
+        fondo.stop();
         vista obj = new vista();// declaro el objeto
         obj.setVisible(true);
         this.dispose();

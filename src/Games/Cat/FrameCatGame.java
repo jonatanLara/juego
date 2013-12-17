@@ -70,6 +70,7 @@ public class FrameCatGame extends javax.swing.JFrame {
         AudioClip son;
         son = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
         son.play();
+        fondo.stop();
         //sonido.stop();
         vista obj = new vista();// declaro el objeto
         obj.setVisible(true);
