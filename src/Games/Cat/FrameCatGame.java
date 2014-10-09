@@ -27,6 +27,7 @@ public class FrameCatGame extends javax.swing.JFrame {
         setUndecorated(true);
         initComponents();
         setLocationRelativeTo(null);//centra la pantalla
+        gana.requestFocus();
     }
 
     /**
@@ -98,6 +99,7 @@ public class FrameCatGame extends javax.swing.JFrame {
         vista obj = new vista();// declaro el objeto
         obj.setVisible(true);
         this.dispose();
+        gana.requestFocus();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 

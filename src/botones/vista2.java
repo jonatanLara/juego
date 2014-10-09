@@ -1,6 +1,7 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * notas
+    crear una clase como instrucciones con graphics para repintar la 
+    animacion de la HojaAnimada!! pero con un hilo  proximamente!! 
  */
 
 /*
@@ -11,14 +12,20 @@
 package botones;
 
 import Creditos.Creditos;
+import Creditos.FondoAnimado;
 import Creditos.Ins2;
 import Creditos.Instrucciones;
+import Games.Memoria.CuentaRegresiva;
 import ImagenFondo.ImagenFondo;
 import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 /**
  *
@@ -27,15 +34,22 @@ import javax.swing.JFrame;
 public class vista2 extends JFrame {
     //imagen de fondo  
 
-    private final ImagenFondo modelo1 = new ImagenFondo("/ImagenFondo/preview2.png");
+    private final ImagenFondo modelo1 = new ImagenFondo("/ImagenFondo/FondoAnimado.gif");
     private AudioClip game;
     private final Creditos titulo = new Creditos();
     private final Instrucciones ints = new Instrucciones();
     private final AudioClip fondo;
-
+  
+     FondoAnimado fondoAnimado =new FondoAnimado();
     /**
      * Creates new form vista2
      */
+       
+        Timer Reloj,Reloj2;
+        private int delay = 90,delay2=90;
+        int cont1 =0,cont2=0;
+        String aux,aux2;
+        
     public vista2() {
         setUndecorated(true);
         setContentPane(modelo1);
@@ -44,9 +58,11 @@ public class vista2 extends JFrame {
         fondo.play();
         initComponents();
         jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        jButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        botonCreditos.setCursor(new Cursor(Cursor.HAND_CURSOR));
         setLocationRelativeTo(null);
         disableButton();
+        //para quitar el foco que viene por default
+        jLabel1.requestFocus();
     }
 
     public void disableButton() {
@@ -63,6 +79,45 @@ public class vista2 extends JFrame {
        //habilita
         btn1.setEnabled(true);
     }
+    
+    public void conteo(){
+       ActionListener taskPerformer = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                 LabelCredito.removeAll();
+                for (int i = 0;i < 9; i++) {
+                    if (cont1==i+1) {
+                        aux = "/hojas/hoja"+String.valueOf(i+1)+".png";
+                       LabelCredito.setIcon(new javax.swing.ImageIcon(getClass().getResource(aux)));
+                       
+                    }
+                    
+                }
+                 cont1++;
+                 if (cont1==9) {
+                    cont1=0;
+                    Reloj.stop();
+                    LabelCredito.removeAll();
+                     instrucciones();
+                    //credito();
+                }
+               }
+            
+             }; // Fin de la declaración del ActionListener.
+        
+        Reloj = new Timer(delay, taskPerformer);
+        Reloj.start(); // Empieza la ejecución del timer.
+       }
+    public void instrucciones(){
+        LabelCredito.removeAll();
+        int witdh = LabelCredito.getWidth();
+        int height = LabelCredito.getHeight();
+        LabelCredito.setLayout(new BorderLayout());
+        ints.setPreferredSize(new Dimension(witdh, height));
+        LabelCredito.add("Center", ints);
+        LabelCredito.updateUI();
+        LabelCredito.validate();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,10 +129,10 @@ public class vista2 extends JFrame {
 
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        credito = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        botonCreditos = new javax.swing.JButton();
+        Cocodrilo = new javax.swing.JLabel();
+        LabelCredito = new javax.swing.JLabel();
+        BotonInstrucciones = new javax.swing.JButton();
         btn1 = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
 
@@ -99,38 +154,38 @@ public class vista2 extends JFrame {
         jLabel1.setForeground(new java.awt.Color(102, 51, 0));
         jLabel1.setText("<<<     TITULOS     >>>");
 
-        jButton2.setFont(new java.awt.Font("Herculanum", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(102, 51, 0));
-        jButton2.setText("creditos");
-        jButton2.setToolTipText("JABAKIDS");
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setDefaultCapable(false);
-        jButton2.setFocusPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonCreditos.setFont(new java.awt.Font("Herculanum", 0, 18)); // NOI18N
+        botonCreditos.setForeground(new java.awt.Color(102, 51, 0));
+        botonCreditos.setText("creditos");
+        botonCreditos.setToolTipText("JABAKIDS");
+        botonCreditos.setBorderPainted(false);
+        botonCreditos.setContentAreaFilled(false);
+        botonCreditos.setDefaultCapable(false);
+        botonCreditos.setFocusPainted(false);
+        botonCreditos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonCreditosActionPerformed(evt);
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoInicial/Imagen-animada-de-Cocodrilo-29.gif"))); // NOI18N
-        jLabel2.setToolTipText("!!HOLA MI NOMBRE ES COCONILO !! BIENVENIDO A MI HOGAR !!");
+        Cocodrilo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoInicial/Imagen-animada-de-Cocodrilo-29.gif"))); // NOI18N
+        Cocodrilo.setToolTipText("!!HOLA MI NOMBRE ES COCONILO !! BIENVENIDO A MI HOGAR !!");
 
-        jButton3.setFont(new java.awt.Font("Herculanum", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(102, 51, 0));
-        jButton3.setText("instrucciones");
-        jButton3.setActionCommand(" instrucciones");
-        jButton3.setAlignmentX(-1.0F);
-        jButton3.setAlignmentY(0.0F);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton3.setDefaultCapable(false);
-        jButton3.setFocusPainted(false);
-        jButton3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        BotonInstrucciones.setFont(new java.awt.Font("Herculanum", 0, 18)); // NOI18N
+        BotonInstrucciones.setForeground(new java.awt.Color(102, 51, 0));
+        BotonInstrucciones.setText("instrucciones");
+        BotonInstrucciones.setActionCommand(" instrucciones");
+        BotonInstrucciones.setAlignmentX(-1.0F);
+        BotonInstrucciones.setAlignmentY(0.0F);
+        BotonInstrucciones.setBorderPainted(false);
+        BotonInstrucciones.setContentAreaFilled(false);
+        BotonInstrucciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BotonInstrucciones.setDefaultCapable(false);
+        BotonInstrucciones.setFocusPainted(false);
+        BotonInstrucciones.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        BotonInstrucciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                BotonInstruccionesActionPerformed(evt);
             }
         });
 
@@ -167,16 +222,16 @@ public class vista2 extends JFrame {
                 .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 470, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
             .add(layout.createSequentialGroup()
                 .add(44, 44, 44)
-                .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 451, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(LabelCredito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 451, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(120, 120, 120)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jButton3)
+                    .add(BotonInstrucciones)
                     .add(layout.createSequentialGroup()
                         .add(17, 17, 17)
-                        .add(jButton2))))
+                        .add(botonCreditos))))
             .add(layout.createSequentialGroup()
                 .add(29, 29, 29)
-                .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 233, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(Cocodrilo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 233, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(4, 4, 4)
                 .add(btn1)
                 .add(18, 18, 18)
@@ -190,15 +245,15 @@ public class vista2 extends JFrame {
                 .add(jLabel1)
                 .add(11, 11, 11)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(credito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 364, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(LabelCredito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 364, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(layout.createSequentialGroup()
                         .add(30, 30, 30)
-                        .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(BotonInstrucciones, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(134, 134, 134)
-                        .add(jButton2)))
+                        .add(botonCreditos)))
                 .add(6, 6, 6)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 163, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(Cocodrilo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 163, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(layout.createSequentialGroup()
                         .add(43, 43, 43)
                         .add(btn1))
@@ -223,82 +278,42 @@ public class vista2 extends JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        credito.removeAll();
+    private void botonCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCreditosActionPerformed
+      
         AudioClip sonido;
         sonido = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
         sonido.play();
-        //dimesion de mi panel
-
-        int witdh = credito.getWidth();
-        int height = credito.getHeight();
-        credito.setLayout(new BorderLayout());
-        // llamao a mi calse 
-       //  Creditos titulo = new Creditos();
-        titulo.setPreferredSize(new Dimension(witdh, height));
-        credito.add("Center", titulo);
-        credito.updateUI();
-        credito.validate();
+        credis();
         
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_botonCreditosActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
-        // TODO add your handling code here:
+       
         enableButton2();
-        credito.removeAll();   
         AudioClip boton;
         boton = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
         boton.play();
-        int witdh = credito.getWidth();
-        int height = credito.getHeight();
-        credito.setLayout(new BorderLayout());
-        Ins2 ints2 = new Ins2();
-        ints2.setPreferredSize(new Dimension(witdh, height));
-        credito.add("Center", ints2);
-        credito.updateUI();
-        credito.validate();
          
     }//GEN-LAST:event_btn2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        credito.removeAll();
+    private void BotonInstruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInstruccionesActionPerformed
+        conteo();
         AudioClip boton;
         boton = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Speech Sleep.wav"));
         boton.play();
-        int witdh = credito.getWidth();
-        int height = credito.getHeight();
-        credito.setLayout(new BorderLayout());
-       // Instrucciones ints = new Instrucciones();
-        ints.setPreferredSize(new Dimension(witdh, height));
-        credito.add("Center", ints);
-        credito.updateUI();
-        credito.validate();
+        remove(this);
          //habilita
         enableButton();
-        remove(this);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_BotonInstruccionesActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        credito.removeAll(); 
-        
-        int witdh = credito.getWidth();
-        int height = credito.getHeight();
-        credito.setLayout(new BorderLayout());
-       // Instrucciones ints = new Instrucciones();
-        ints.setPreferredSize(new Dimension(witdh, height));
-        credito.add("Center", ints);
-        credito.updateUI();
-        credito.validate();
-         //habilita
-        enableButton();
-       // remove(this);
+        LabelCredito.removeAll(); 
         AudioClip boton;
         boton = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/bubble.wav"));
         boton.play();
-        
         
     }//GEN-LAST:event_btn1ActionPerformed
 
@@ -314,13 +329,58 @@ public class vista2 extends JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonInstrucciones;
+    private javax.swing.JLabel Cocodrilo;
+    private javax.swing.JLabel LabelCredito;
+    private javax.swing.JButton botonCreditos;
     private javax.swing.JButton btn1;
     private javax.swing.JButton btn2;
-    private javax.swing.JLabel credito;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
+
+       
+    
+         
+          public void credito() 
+          {
+              LabelCredito.removeAll();
+              int witdh = LabelCredito.getWidth();
+              int height = LabelCredito.getHeight();
+              LabelCredito.setLayout(new BorderLayout());
+              titulo.setPreferredSize(new Dimension(witdh, height));
+              LabelCredito.add("Center", titulo);
+              LabelCredito.updateUI();
+              LabelCredito.validate();
+          }
+          public void credis(){
+       ActionListener taskPerformer = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                LabelCredito.removeAll();
+                for (int i = 0;i < 9; i++) {
+                    if (cont2==i+1) {
+                        aux2 = "/hojas/hoja"+String.valueOf(i+1)+".png";
+                       LabelCredito.setIcon(new javax.swing.ImageIcon(getClass().getResource(aux2)));
+                       
+                    }
+                    
+                }
+                 cont2++;
+                 if (cont2==9) {
+                    cont2=0;
+                    Reloj2.stop();
+                    LabelCredito.removeAll();
+                    credito();
+       
+                }
+               }
+            
+             }; // Fin de la declaración del ActionListener.
+        
+        Reloj2 = new Timer(delay2, taskPerformer);
+        Reloj2.start(); // Empieza la ejecución del timer.
+       }
+          
+        
 }

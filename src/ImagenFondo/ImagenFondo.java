@@ -10,13 +10,18 @@ import javax.swing.JPanel;
  *
  * @author usuario
  */
+/* al extender creo un jpanel*/
 public class ImagenFondo extends JPanel {
-private Image imagen;
+
+    private Image imagen;
+    //creo mi constructor
     public ImagenFondo() {
+    //mi imagen sera null para retomarla despues
         imagen =null;
        
       // this.setSize(795, 600);
       } 
+    
      public ImagenFondo(String nombre){
           if(nombre != null)
               imagen = new ImageIcon(getClass().getResource(nombre)).getImage();

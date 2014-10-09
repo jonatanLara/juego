@@ -47,8 +47,8 @@ public class CustomCanvas extends Canvas{
 
     @Override
     public void paint(Graphics g){
-       g.setColor(Color.white);
-        
+        g.setColor(Color.white);
+        //g.setColor(new Color(0, 0, 0, 10));
         g.fillRect(0, 0, getWidth(), getHeight());
       //  g.setColor(Color.black);
         initComponents();

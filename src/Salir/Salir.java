@@ -6,8 +6,7 @@ package Salir;
 
 import ImagenFondo.ImagenFondo;
 import botones.vista;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+
 
 /**
  *
@@ -19,11 +18,12 @@ public class Salir extends javax.swing.JFrame {
      * Creates new form Salir
      */
     public Salir() {
+        
         setUndecorated(true);
         setContentPane(modelo);
         initComponents();
         setLocationRelativeTo(null);
-        
+        jLabel1.requestFocus();
     }
 
     /**
@@ -121,19 +121,16 @@ public class Salir extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jButton1.addMouseListener(new  MouseAdapter(){
-            @Override
-            public void mouseClicked(MouseEvent e){
-              System.exit(vista.EXIT_ON_CLOSE);
-              
-            }
-        });
+         System.exit(0);
+         jLabel1.requestFocus();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         vista  obj = new vista();// declaro el objeto
         obj.setVisible(true);
         dispose();
+        jLabel1.requestFocus();
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 

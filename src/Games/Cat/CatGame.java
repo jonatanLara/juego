@@ -70,12 +70,13 @@ public class CatGame extends JLabel{
             if (!cards.get(i).isBlock()) {
                 
                 count++;
-                
+               
             }
         }
         if (count>=5) {
             if (win()) {
                 win = true;
+              //  System.out.println("co"+count);
             }
             
         }
@@ -87,10 +88,15 @@ public class CatGame extends JLabel{
                 ganador = java.applet.Applet.newAudioClip(getClass().getResource("/Audio/Applause.wav"));
                 ganador.play();*/
                 
-                JOptionPane.showMessageDialog(this, "Ganaste!");
+                
                 this.init();
                 this.repaint();
-       
+            if (count==1||count==3||count==5||count==7||count==9) {
+                JOptionPane.showMessageDialog(this, "Gano el perro");
+            }
+            else{
+            JOptionPane.showMessageDialog(this, "Gano el gato!");
+            }
             
         }else{//si no hay ganador esto es un gato encerraado
             if (cat()) {
